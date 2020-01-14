@@ -9,6 +9,14 @@ services:
     volumes:
       - "governors-election-data:/opt/solr/server/solr/mycores/governors-election"
 
+  logstash:
+    image: logstash:7.5.1
+    ports:
+      - "9600:9600"
+    volumes:
+      - "./logstash/pipeline/:/usr/share/logstash/pipeline/"
+      - "./logstash/config/:/usr/share/logstash/config/"
+
 volumes:
    governors-election-data:
 
