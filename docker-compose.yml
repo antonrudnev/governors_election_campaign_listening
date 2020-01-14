@@ -12,11 +12,13 @@ services:
   logstash:
     image: governors-election-logstash
     build: ./logstash
+
+  nginx:
+    image: nginx:1.17
     ports:
-      - "9600:9600"
-        #    volumes:
-        #- "./logstash/pipeline/:/usr/share/logstash/pipeline/"
-        #- "./logstash/config/:/usr/share/logstash/config/"
+      - "80:80"
+    volumes:
+      - "./nginx/nginx.conf:/etc/nginx/nginx.conf:ro"
 
 volumes:
    governors-election-data:
