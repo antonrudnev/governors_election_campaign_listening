@@ -49,6 +49,5 @@ SERVICE_DESCRIPTION="logstash"
 # If you need to run a command or script before launching Logstash, put it
 # between the lines beginning with `read` and `EOM`, and uncomment those lines.
 ###
-read -r -d '' PRESTART << EOM
-bin/logstash-plugin install logstash-output-solr_http
-EOM
+# read -r -d '' PRESTART << EOM
+# EOM
