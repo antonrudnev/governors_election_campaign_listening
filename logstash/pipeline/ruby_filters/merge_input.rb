@@ -1,7 +1,7 @@
 require 'csv' 
 
 def register(params)
-    file = File.read("/usr/share/logstash/pipeline/ruby/candidates.csv")
+    file = File.read("/usr/share/logstash/pipeline/params/candidates.csv")
     @candidates = CSV.parse(file, :headers => false)
 end
 
