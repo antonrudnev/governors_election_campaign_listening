@@ -4,8 +4,6 @@ services:
   solr:
     image: governors-election-solr
     build: ./solr
-    ports:
-      - "8983:8983"
     volumes:
       - "governors-election-data:/opt/solr/server/solr/mycores/governors-election"
 
@@ -19,6 +17,7 @@ services:
       - "80:80"
     volumes:
       - "./nginx/nginx.conf:/etc/nginx/nginx.conf:ro"
+      - "./nginx/htpasswd:/etc/nginx/htpasswd:ro"
 
 volumes:
    governors-election-data:
